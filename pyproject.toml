@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "birthday"
+version = "0.1.0"
+description = ""
+authors = ["vel <vellius5@gmail.com>"]
+readme = "README.md"
+packages = [{include = "birthday"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^7.4.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
