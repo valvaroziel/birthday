@@ -15,7 +15,7 @@ def main():
     print(*functions.format_birthdays(birthday_list), sep=", ")
     bd_check = functions.check_birthdays(birthday_list)
 
-    if bd_check is not False:
+    if bd_check:
         print(f"In this simulation, multiple people have a birthday on {functions.format_birthdays(bd_check)}")
     else:
         print("There are no matching birthdays in this simulation")

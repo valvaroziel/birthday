@@ -23,11 +23,12 @@ def check_birthdays(birthdays: list) -> datetime.date or bool:
         datetime.date or bool: Date of the first matching birthday; False otherwise.
     """
 
+    if len(birthdays) == set(birthdays):
+        return None
+
     for i, bd in enumerate(birthdays):
         if bd in birthdays[i+1:]:
             return bd
-
-    return False
 
 def simulate_birthdays(sims: int, people: int) -> tuple:
     """Runs (sims) simulations and returns the number of sets where two or more people share a birthday and the percentage of matches.
@@ -48,7 +49,7 @@ def simulate_birthdays(sims: int, people: int) -> tuple:
 
         birthdays = generate_birthdays(people)
 
-        if check_birthdays(birthdays) is not False:
+        if check_birthdays(birthdays):
             matches += 1
 
     if matches > 0:
