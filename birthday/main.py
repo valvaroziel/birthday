@@ -23,7 +23,6 @@ def main():
     print(f"Generating {amount} random birthdays {constants.MAX_BIRTHDAYS} times.")
     input("Press Enter to begin...")
     sims = functions.simulate_birthdays(constants.SIMULATIONS, amount)
-    print(sims)
 
     if sims[0] != 0:
         print(f'Out of {constants.SIMULATIONS:,} simulations of {amount} people, there was at least one matching birthday in that group {sims[0]:,} times. This means that {amount} people have a {sims[1]:.2%} chance of having a matching birthday in their group.')
