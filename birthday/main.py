@@ -5,7 +5,7 @@ def main():
     """Runs through the core logic of the Birthday Paradox simulator"""
     amount = input(f'How many birthdays shall I generate? (Max {constants.MAX_BIRTHDAYS}): ')
 
-    while amount.isdigit() is False or int(amount) <= 0 or int(amount) > 100:
+    while amount.isdigit() is False or (int(amount) <= 0 or int(amount) > 100):
         amount = input(f'Please input a number from 1 to {constants.MAX_BIRTHDAYS}: ')
 
     amount = int(amount)
@@ -26,6 +26,8 @@ def main():
 
     if sims[0] != 0:
         print(f'Out of {constants.SIMULATIONS:,} simulations of {amount} people, there was at least one matching birthday in that group {sims[0]:,} times. This means that {amount} people have a {sims[1]:.2%} chance of having a matching birthday in their group.')
+    else:
+        print(f'Out of {constants.SIMULATIONS:,} simulations of {amount} people, there were no groups at all where at least two people shared a birthday.')
 
 if __name__ == "__main__":
     main()

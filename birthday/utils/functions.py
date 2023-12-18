@@ -13,7 +13,7 @@ def generate_birthdays(amount: int):
     birthdays = [START + datetime.timedelta(days=random.randint(1,364)) for i in range(amount)]
     return birthdays
 
-def check_birthdays(birthdays: list) -> datetime.date or bool:
+def check_birthdays(birthdays: list) -> datetime.date or None:
     """Checks a list of birthdays to see if two or more members of the sample are the same.
 
     Args:
